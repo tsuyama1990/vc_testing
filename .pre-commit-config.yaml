@@ -27,6 +27,8 @@ repos:
     rev: "v1.10.0"
     hooks:
       - id: mypy
+        args: [--ignore-missing-imports]
+        additional_dependencies: [types-requests, types-PyYAML]
   - repo: https://github.com/igorshubovych/markdownlint-cli
     rev: v0.40.0
     hooks:

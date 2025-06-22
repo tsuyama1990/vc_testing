@@ -1,15 +1,20 @@
 [tool.poetry]
-name = "my_tmp"
+name = "vc_test"
 version = "0.1.0"
 description = "template"
-authors = ["xoxo <xoxo@gmail.com>"]
+authors = ["tomo <tomoyuki.tsuyaman@gmail.com>"]
 readme = "README.md"
 packages = [
     { include = "src" }
 ]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.12.4"
+google-api-python-client = "^2.173.0"
+bs4 = "^0.0.2"
+chardet = "^5.2.0"
+lxml = {extras = ["html-clean"], version = "^5.4.0"}
+lxml-html-clean = "^0.4.2"
 
 [tool.poetry.dev-dependencies]
 black = "^24.2.0"
@@ -21,17 +26,23 @@ pre-commit = "^3.0.4"
 ruff = "^0.4.4"
 ipykernel = "^6.29.4"
 
+[tool.poetry.group.dev.dependencies]
+types-requests = "^2.32.4.20250611"
+types-pyyaml = "^6.0.12.20250516"
+
 [tool.mypy]
-disallow_any_explicit = true
+disallow_any_explicit = false
 disallow_any_generics = true
 warn_unreachable = true
 warn_unused_ignores = true
 disallow_untyped_defs = true
 exclude = [".venv/"]
+ignore_missing_imports = true
 
 [[tool.mypy.overrides]]
 module = "tests.*"
 disallow_untyped_defs = false
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 addopts = "-v --mypy -p no:warnings --cov=myproject --cov-report=html --doctest-modules --ignore=myproject/__main__.py"
