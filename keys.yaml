@@ -1,3 +1,5 @@
 google:
   api_key: "keyin"
   custom_search_engine_id: "keyin"
+gemini:
+  api_key: "keyin"
