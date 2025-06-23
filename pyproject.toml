@@ -15,6 +15,7 @@ bs4 = "^0.0.2"
 chardet = "^5.2.0"
 lxml = {extras = ["html-clean"], version = "^5.4.0"}
 lxml-html-clean = "^0.4.2"
+google-generativeai = "^0.8.5"
 
 [tool.poetry.dev-dependencies]
 black = "^24.2.0"
